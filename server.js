@@ -6,7 +6,7 @@ var ProductController=require('./productcontroller')
 var BodyParser=require('body-parser');
 var Cors=require('cors')
 // var server=Mongoose();
-const PORT=1000||process.env.PORT
+const PORT=process.env.PORT||1000
 const MONGOURL="mongodb://test:test1234@ds117729.mlab.com:17729/coerproject"
 server.use(Cors())
 server.use(BodyParser.json())
