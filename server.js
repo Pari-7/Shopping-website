@@ -19,7 +19,7 @@ Mongoose.connect(MONGOURL,function(error){
     console.log("Error in connecting to mongodb",error);
 })
 })
-server.use(express.static(_dirname + '/distant'));
+server.use(express.static(__dirname + '/dist/k2'));
 server.get('/', function(req,res){
     res.sendFile('./dist/k2/index.html')
 })
