@@ -13,4 +13,4 @@ var userschema = new Schema({
     role:{type:String,default:'user'}
 
 })
-module.exports=Mongoose.model('user',userschema)
+module.exports=Mongoose.model('pari7user',userschema)

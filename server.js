@@ -3,12 +3,14 @@ var server=express();
 var Mongoose=require('mongoose')
 var UserController=require('./usercontroller')
 var ProductController=require('./productcontroller')
+var CartController=require('./cartcontroller')
 var BodyParser=require('body-parser');
 var Cors=require('cors')
 var path=require('path')
 // var server=Mongoose();
 const PORT=process.env.PORT||1000
-const MONGOURL="mongodb://test:test1234@ds117729.mlab.com:17729/coerproject"
+ const MONGOURL="mongodb://test:test1234@ds117729.mlab.com:17729/coerproject"
+//  const MONGOURL="mongodb://localhost:27017/coerproject"
 server.use(Cors())
 server.use(BodyParser.json())
 
@@ -30,6 +32,8 @@ server.post('/api/addproduct',ProductController.addproduct)
 server.get('/api/allproducts',ProductController.allproducts)
 server.post('/api/deleteaccount',UserController.deleteaccount)
 server.get('/api/product/:id',ProductController.getProduct)
+server.post('/api/addtocart',CartController.addToCart)
+server.post('/api/cartitems',CartController.cartItems)
 server.get('/*', function(req,res) {
     
     res.sendFile(path.join(__dirname+'/dist/k2/index.html'));

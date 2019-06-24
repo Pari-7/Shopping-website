@@ -12,7 +12,7 @@ res.send({
     message:"Signup Success",
     code:100
 })
-email.sendMail(req.body.email,"Welcome","successful registration").then(function(success){
+Mailer.sendMail(req.body.email,"Welcome","successful registration").then(function(success){
 },
 function(error){
     console.log("error in sending mail",error)

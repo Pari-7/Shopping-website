@@ -151,7 +151,18 @@ module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\n 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card\" style=\"width: 18rem;\">\n    <img src={{product.image}} class=\"card-img-top\" alt=\"...\" height=\"180px\">\n   \n    <div class=\"card-body\">\n      <h5 class=\"card-title\">{{product.name}}</h5>\n      <p class=\"card-text\">{{product.price}}</p>\n      <!-- <a href=\"#\" class=\"btn btn-primary\"></a> -->\n    </div>\n  </div>"
+module.exports = "\n<div (click)=\"showproduct()\" *ngIf=\"product\" class=\"card\" style=\"width: 18rem;\">\n    <img src={{product.image}} class=\"card-img-top\" alt=\"...\" height=\"180px\">\n   \n    <div class=\"card-body\">\n      <h5 class=\"card-title\">{{product.name}}</h5>\n      <p class=\"card-text\">{{product.price}}</p>\n      <!-- <a href=\"#\" class=\"btn btn-primary\"></a> -->\n    </div>\n  </div>"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/productdetail/productdetail.component.html":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/productdetail/productdetail.component.html ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<!-- <p>\n  productdetail works!\n</p> -->\n<div *ngIf=\"product\" class=\"container\" style=\" padding:20px \">\n  <div class=\"row\">\n      <div class=\"col-md-6\">\n          \n          <img src=\"{{product.image}}\" alt=\"image not avilable\" style= \"width: 416px; height: 416px\" ><br>\n          <button (click)=\"addToCart()\" routerLink=\"/\" class=\"btn btn-outline-info col-md-5\" style=\"padding: 10px\" (click)=\"addToCart()\"  >Add to Cart</button>\n          <button (click)=\"buyNow()\" class=\"btn btn-outline-success col-md-5\" style=\"padding: 10px\" >Buy now</button>\n      </div>\n      <div class=\"col-md-6\">\n\n          <table>\n              <tr>\n                  <td><h3>{{product.name}} </h3></td>\n              </tr>\n              <tr>\n                  <td><h3>{{product.price}}</h3></td>\n              </tr>\n              <tr>\n\n                  <td><span><img src=\"https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/49f16fff-0a9d-48bf-a6e6-5980c9852f11.png?q=90\" width=\"18\" height=\"18\" class=\"_3Amlen\" ></span>No cost EMI ₹8,000/month. Standard EMI also availableView Plans</td></tr>\n\n              <tr>\n                  <td><span><img src=\"https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90\" width=\"18\" height=\"18\" class=\"_3Amlen\" ></span> Bank Offer10% Instant Discount* with Axis Bank Credit and Debit CardsT&C</td></tr>\n              <tr>\n                  <td><span><img src=\"https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90\" width=\"18\" height=\"18\" class=\"_3Amlen\" ></span>Bank Offer10% off* with Axis Bank Buzz Credit CardT&C</td></tr>\n              <tr>\n                  <td><span><img src=\"https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90\" width=\"18\" height=\"18\" class=\"_3Amlen\" ></span>Free 16GB SD Card & Camera Bag with this DSLR</td></tr>\n              <tr><td class=\"row\"><span class=\"col-md-4\">Seller</span>\n                  <span class=\"col-md-4\"> RetailNet</span>\n              </td></tr>\n              <tr>\n                  <td class=\"row\">\n                      <span class=\"col-md-4\">Highlights</span>\n\n                      <td><span class=\"col-md-4\"></span><ul><li>Effective Pixels: 24.2 MP</li>\n                          <li><span class=\"col-md-4\">Sensor Type: CMOS</span></li>\n                          <li><span class=\"col-md-4\"></span>WiFi Available</li>\n                          <li><span class=\"col-md-4\"></span>1080p at 60p + Time-Lapse</li></ul>\n\n                  </td></tr>\n          </table>\n      </div>\n  </div>\n\n</div >"
 
 /***/ }),
 
@@ -195,7 +206,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var apurl = "/addproduct";
+var apurl = "/api/addproduct";
+// const apurl="http://localhost:1000/api/addproduct"
 let AddproductComponent = class AddproductComponent {
     constructor(http, toastr) {
         this.http = http;
@@ -298,6 +310,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _forgotpassword_forgotpassword_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./forgotpassword/forgotpassword.component */ "./src/app/forgotpassword/forgotpassword.component.ts");
 /* harmony import */ var _deleteaccount_deleteaccount_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./deleteaccount/deleteaccount.component */ "./src/app/deleteaccount/deleteaccount.component.ts");
 /* harmony import */ var _getproduct_getproduct_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./getproduct/getproduct.component */ "./src/app/getproduct/getproduct.component.ts");
+/* harmony import */ var _productdetail_productdetail_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./productdetail/productdetail.component */ "./src/app/productdetail/productdetail.component.ts");
+/* harmony import */ var _cart_cart_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./cart/cart.component */ "./src/app/cart/cart.component.ts");
+
+
 
 
 
@@ -315,7 +331,9 @@ const routes = [
     { path: 'addproduct', component: _addproduct_addproduct_component__WEBPACK_IMPORTED_MODULE_5__["AddproductComponent"] },
     { path: 'forgotpassword', component: _forgotpassword_forgotpassword_component__WEBPACK_IMPORTED_MODULE_7__["ForgotpasswordComponent"] },
     { path: 'deleteaccount', component: _deleteaccount_deleteaccount_component__WEBPACK_IMPORTED_MODULE_8__["DeleteaccountComponent"] },
-    { path: 'getproduct', component: _getproduct_getproduct_component__WEBPACK_IMPORTED_MODULE_9__["GetproductComponent"] }
+    { path: 'getproduct', component: _getproduct_getproduct_component__WEBPACK_IMPORTED_MODULE_9__["GetproductComponent"] },
+    { path: 'product/:id', component: _productdetail_productdetail_component__WEBPACK_IMPORTED_MODULE_10__["ProductdetailComponent"] },
+    { path: 'cart', component: _cart_cart_component__WEBPACK_IMPORTED_MODULE_11__["CartComponent"] }
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
@@ -357,7 +375,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var apiurl = "/allproducts";
+var apiurl = "/api/allproducts";
+//const apiurl="http://localhost:1000/api/allproducts"
 let AppComponent = class AppComponent {
     constructor(http) {
         this.http = http;
@@ -437,6 +456,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _forgotpassword_forgotpassword_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./forgotpassword/forgotpassword.component */ "./src/app/forgotpassword/forgotpassword.component.ts");
 /* harmony import */ var _deleteaccount_deleteaccount_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./deleteaccount/deleteaccount.component */ "./src/app/deleteaccount/deleteaccount.component.ts");
 /* harmony import */ var _getproduct_getproduct_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./getproduct/getproduct.component */ "./src/app/getproduct/getproduct.component.ts");
+/* harmony import */ var _productdetail_productdetail_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./productdetail/productdetail.component */ "./src/app/productdetail/productdetail.component.ts");
 
 
 
@@ -460,6 +480,7 @@ __webpack_require__.r(__webpack_exports__);
 
 // import { CardComponent } from './card/card.component';
 
+
 let AppModule = class AppModule {
 };
 AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -478,7 +499,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _forgotpassword_forgotpassword_component__WEBPACK_IMPORTED_MODULE_19__["ForgotpasswordComponent"],
             _deleteaccount_deleteaccount_component__WEBPACK_IMPORTED_MODULE_20__["DeleteaccountComponent"],
             // CardComponent,
-            _getproduct_getproduct_component__WEBPACK_IMPORTED_MODULE_21__["GetproductComponent"]
+            _getproduct_getproduct_component__WEBPACK_IMPORTED_MODULE_21__["GetproductComponent"],
+            _productdetail_productdetail_component__WEBPACK_IMPORTED_MODULE_22__["ProductdetailComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -564,11 +586,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CartComponent", function() { return CartComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm2015/ngx-toastr.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 
 
+
+
+
+// const addtocartapi="http://localhost:1000/api/addtocart";
+var addtocartapi = "/api/addtocart";
 let CartComponent = class CartComponent {
-    constructor() { }
+    constructor(http, toastr, router) {
+        this.http = http;
+        this.toastr = toastr;
+        this.router = router;
+    }
     ngOnInit() {
+    }
+    cart() {
     }
 };
 CartComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -577,7 +613,7 @@ CartComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         template: __webpack_require__(/*! raw-loader!./cart.component.html */ "./node_modules/raw-loader/index.js!./src/app/cart/cart.component.html"),
         styles: [__webpack_require__(/*! ./cart.component.css */ "./src/app/cart/cart.component.css")]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])
 ], CartComponent);
 
 
@@ -615,7 +651,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var apurl = "/deleteaccount";
+var apurl = "/api/deleteaccount";
+//const apurl="http://localhost:1000/api/deleteproduct"
 let DeleteaccountComponent = class DeleteaccountComponent {
     constructor(http, toastr, router) {
         this.http = http;
@@ -774,7 +811,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var apiurl = "/allproducts";
+var apiurl = "/api/allproducts";
+//const apiurl="http://localhost:1000/api/allproducts"
 let HomeComponent = class HomeComponent {
     constructor(http) {
         this.http = http;
@@ -833,7 +871,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var apiurl = "/login";
+const apiurl = "/api/login";
+//const apiurl="http://localhost:1000/api/login"
 let LoginComponent = class LoginComponent {
     constructor(http, toastr, router) {
         this.http = http;
@@ -963,14 +1002,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductComponent", function() { return ProductComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
 
 
 let ProductComponent = class ProductComponent {
-    constructor() { }
+    constructor(router) {
+        this.router = router;
+        this.product = null;
+    }
     // name="One Plus7"
     //  Price=33000
     //  image="https://static.toiimg.com/photo/69440155.cms"
     ngOnInit() {
+        console.log("mjhe kya milrha h", this.product);
+    }
+    showproduct() {
+        var url = "/product/" + this.product.id;
+        this.router.navigate([url]);
     }
 };
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -983,8 +1032,106 @@ ProductComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         template: __webpack_require__(/*! raw-loader!./product.component.html */ "./node_modules/raw-loader/index.js!./src/app/product/product.component.html"),
         styles: [__webpack_require__(/*! ./product.component.css */ "./src/app/product/product.component.css")]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
 ], ProductComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/productdetail/productdetail.component.css":
+/*!***********************************************************!*\
+  !*** ./src/app/productdetail/productdetail.component.css ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3Byb2R1Y3RkZXRhaWwvcHJvZHVjdGRldGFpbC5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/productdetail/productdetail.component.ts":
+/*!**********************************************************!*\
+  !*** ./src/app/productdetail/productdetail.component.ts ***!
+  \**********************************************************/
+/*! exports provided: ProductdetailComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductdetailComponent", function() { return ProductdetailComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm2015/ngx-toastr.js");
+
+
+
+
+
+//const addtocartapi="http://localhost:1000/api/addtocart";
+const addtocartapi = "/api/addtocart";
+let ProductdetailComponent = class ProductdetailComponent {
+    constructor(http, activatedroute, toastr, router) {
+        this.http = http;
+        this.activatedroute = activatedroute;
+        this.toastr = toastr;
+        this.router = router;
+        this.product = {};
+        console.log("current route ki details", this.activatedroute.snapshot);
+        var productid = this.activatedroute.snapshot.params.id;
+        //var apiurl = "http://localhost:1000/api/product/"+ productid
+        const apiurl = "/api/product" + productid;
+        this.http.get(apiurl).subscribe((response) => {
+            console.log("response from get product api", response);
+            this.product = response["data"];
+        }, (error) => {
+            console.log("error in getting product detail", error);
+        });
+    }
+    addToCart() {
+        if (localStorage.email) {
+            var requestobj = {
+                email: localStorage.email,
+                productname: this.product["name"],
+                productprice: this.product["price"],
+                productimage: this.product["image"],
+                productid: this.product["id"]
+            };
+            this.http.post(addtocartapi, requestobj)
+                .subscribe((response) => {
+                if (response = "code==100") {
+                    this.toastr.success("Added To Cart");
+                }
+            }, (error) => {
+                this.toastr.error("Error in adding to cart");
+            });
+        }
+        else {
+            this.router.navigate(['/login']);
+        }
+    }
+    buyNow() {
+        if (localStorage.email) {
+            this.addToCart();
+            this.router.navigate(['/cart']);
+        }
+        else {
+            this.router.navigate(['/login']);
+        }
+    }
+    ngOnInit() {
+    }
+};
+ProductdetailComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-productdetail',
+        template: __webpack_require__(/*! raw-loader!./productdetail.component.html */ "./node_modules/raw-loader/index.js!./src/app/productdetail/productdetail.component.html"),
+        styles: [__webpack_require__(/*! ./productdetail.component.css */ "./src/app/productdetail/productdetail.component.css")]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], ngx_toastr__WEBPACK_IMPORTED_MODULE_4__["ToastrService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
+], ProductdetailComponent);
 
 
 
@@ -1019,7 +1166,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var apiurl = "/signup";
+var apiurl = "/api/signup";
+//const apiurl="http://localhost:1000/api/signup"
 let SignupComponent = class SignupComponent {
     constructor(http, toastr) {
         this.http = http;

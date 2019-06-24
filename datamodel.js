@@ -16,4 +16,4 @@ id:{required:true,type:Number},
     price:{type:Number}
 
 })
-module.exports=Mongoose.model('product',productschema)
+module.exports=Mongoose.model('pari7product',productschema)
