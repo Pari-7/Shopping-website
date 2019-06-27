@@ -92,7 +92,7 @@ exports.deleteaccount=function(req,res){
         var dataobj={
             email:req.body.email
         }
-        UserModel.remove(request).then(function(success){
+        UserModel.remove(dataobj).then(function(user){
             if(success){
                 console.log("Account deleted",user)
                 res.send({
@@ -102,7 +102,10 @@ exports.deleteaccount=function(req,res){
 
             }
             else{
-console.log("user no removed")
+console.log("user not removed")
+res.send({
+    code:300
+})
             }
         },
         function(error){

@@ -7,5 +7,6 @@ var cartSchema=new Schema({
     productimage:{type:String,required:true},
     productprice:{type:Number,required:true},
     productquantity:{type:Number,default:1}
+    
 })
 module.exports=Mongoose.model('pari7cart',cartSchema)
